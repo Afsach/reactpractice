@@ -16,7 +16,7 @@ export const UseEffectPractice =()=>{
         <h1> Code snippetted</h1>
        
        <button onClick={increaseCounter}>increase</button>
-       <p>{count}</p>
+       <h2>{count}</h2>
        <button onClick={decreaseCounter}>decrease</button>
         </>
     )

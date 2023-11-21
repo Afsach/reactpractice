@@ -6,6 +6,7 @@
 }
 
 button {
+    background-color: rgb(185, 189, 195);
     width: 100px;
     outline: none;
     border : none;
@@ -16,3 +17,4 @@ button {
  p {
     color : rgb(237, 221, 79);
  }
+
