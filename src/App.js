@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import Navbar from './Navbar/Navbar';
+import Home from './Components/Home/Home';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
+import Skills from './Components/Skills/Skills';
+import Work from './Components/Work/Work';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [title, setTitle] = useState(null);
+    const [id, setId] = useState(null)
+    const fetchData = async ()=> {
+     const reponse = await fetch("https://jsonplaceholder.typicode.com/todos/4");
+        const data = await  reponse.json();
+        console.log(data);
+        setTitle(data.title);
+        setId(data.id)
+    }
+
+    useEffect(()=> {
+        fetchData()
+    },[id])
+     
+    return (
+        <>
+
+        <div>
+            <h1>
+                title : {title}<br/>
+                id : {id}
+            </h1>
+        </div>
+            {/* <Navbar/>
+            <Home/>
+            <About/>
+            <Contact/>
+            <Skills/>
+            <Work/> */}
+
+
+        </>
+    )
 }
 
 export default App;
