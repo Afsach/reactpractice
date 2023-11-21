@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css'
+
+import  {UseEffectPractice}  from './Components/UseEffectPractice';
 
 const App = () => {
      
     return (
         <>
         practice
+        <UseEffectPractice/>
         </>
     )
 }
